@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ja" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜の旧校舎からの脱出 〜霊的フラッシュ演出版〜</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=VT323&display=swap');
+        .font-retro { font-family: 'VT323', monospace; }
+        .font-title { font-family: 'Noto Sans JP', sans-serif; }
+        
+        @keyframes scaryWarp {
+            0% { transform: translate(0, 0) skew(0deg); filter: brightness(1); }
+            50% { transform: translate(-1px, 1px) skew(0.3deg); filter: brightness(0.9) contrast(120%); }
+            100% { transform: translate(0, 0) skew(0deg); filter: brightness(1); }
+        }
+        .scary-atmosphere { animation: scaryWarp 4s infinite ease-in-out; }
+
+        .crt::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.08), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.08));
+            z-index: 99999;
+            background-size: 100% 3px, 4px 100%;
+            pointer-events: none;
+        }
+        @keyframes blinkAnim {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        .timer-blink { animation: blinkAnim 0.8s infinite; }
+        
+        .bloody-hands-bg {
+            background-image: 
+                radial-gradient(ellipse 100px 140px at 4% 12%, rgba(220, 0, 0, 0.28) 0%, transparent 70%),
+                radial-gradient(ellipse 110px 150px at 96% 18%, rgba(200, 0, 0, 0.24) 0%, transparent 70%),
+                radial-gradient(ellipse 120px 160px at 8% 88%, rgba(240, 0, 0, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 100px 130px at 92% 82%, rgba(210, 0, 0, 0.24) 0%, transparent 70%),
+                radial-gradient(circle at 50% 3%, rgba(255, 0, 0, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 50% 97%, rgba(255, 0, 0, 0.18) 0%, transparent 50%);
+        }
+
+        @keyframes phantomFlash {
+            0% { opacity: 0; transform: scale(0.7); filter: brightness(0.2) blur(10px); }
+            30% { opacity: 0.85; transform: scale(1.05); filter: brightness(1) blur(0px); }
+            70% { opacity: 0.85; transform: scale(1); filter: brightness(0.9) blur(0px); }
+            100% { opacity: 0; transform: scale(1.2); filter: brightness(0.1) blur(12px); }
+        }
+        .phantom-appear {
+            animation: phantomFlash 3.5s ease-in-out forwards;
+        }
+
+        :root{--dk:.45;--clear:85%;--gr:.05}
+        #fx-vignette{position:fixed;inset:0;z-index:9990;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent var(--clear),rgba(0,0,0,var(--dk)) 100%)}
+        #fx-grain{position:fixed;inset:0;z-index:9991;pointer-events:none;opacity:var(--gr);mix-blend-mode:overlay;animation:grain .5s steps(4) infinite;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+        @keyframes grain{0%{background-position:0 0}25%{background-position:-40px 30px}50%{background-position:30px -50px}75%{background-position:-20px -30px}}
+        #fx-black{position:fixed;inset:0;background:#000;opacity:0;z-index:9992;pointer-events:none}
+        #fx-figure{position:fixed;bottom:0;transform:translateX(-50%);opacity:0;transition:opacity .25s;z-index:9989;pointer-events:none;filter:blur(.8px) contrast(.9)}
+        #fx-figure svg{height:100%;width:auto}
+        @keyframes shake{0%,100%{transform:translate(0)}20%{transform:translate(-4px,2px)}40%{transform:translate(3px,-3px)}60%{transform:translate(-2px,3px)}80%{transform:translate(4px,-1px)}}
+        .fx-shake{animation:shake .12s 12}
+    
+        #screen-game{filter:saturate(.5) brightness(.92)}
+        .fl{animation:flk 4s infinite}
+        @keyframes flk{0%,92%,100%{opacity:1}94%{opacity:.15}96%{opacity:.9}98%{opacity:.1}}
+        .creeping-ghost{animation:creep 9s ease-out forwards}
+        @keyframes creep{0%{transform:scale(.45) translateY(6vh);opacity:0}25%{opacity:.9}100%{transform:scale(1.02) rotate(-1.5deg);opacity:1}}
+
+.hidden{display:none!important}
+</style>
+</head>
+<body class="h-full bg-slate-950 text-slate-100 font-title selection:bg-red-500 selection:text-white flex flex-col justify-between crt scary-atmosphere">
+
+    <svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+<linearGradient id="dr" y1="0" y2="1"><stop offset="0" stop-color="#dcdad2"/><stop offset=".55" stop-color="#8f8c85"/><stop offset="1" stop-color="#3f3d39"/></linearGradient>
+<linearGradient id="sk" y1="0" y2="1"><stop offset="0" stop-color="#d7d1c4"/><stop offset="1" stop-color="#a39d90"/></linearGradient>
+<filter id="hf" x="-10%" y="-5%" width="120%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".05 .6" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter>
+<symbol id="onryo" viewBox="0 0 100 300">
+<g filter="url(#hf)"><path d="M30 40C24 100 22 190 26 262L40 250 46 270 54 250 62 272 74 262C78 190 76 100 70 40Z" fill="#030303"/></g>
+<path d="M32 84Q50 77 68 84L77 170 85 244Q66 258 50 250 34 258 15 244L23 170Z" fill="url(#dr)"/>
+<path d="M42 90L37 244M58 90L63 244M50 100V250M30 150L22 240M70 150L78 240" stroke="#000" stroke-opacity=".22" fill="none"/>
+<path d="M32 86Q17 130 19 192L27 194Q30 138 41 98Z" fill="url(#dr)"/><path d="M68 86Q83 130 81 192L73 194Q70 138 59 98Z" fill="url(#dr)"/>
+<g fill="#b9b3a6" stroke="#b9b3a6" stroke-width="1.6" stroke-linecap="round"><ellipse cx="23" cy="194" rx="4.5" ry="4"/><path d="M19 195l-3 24M22 197l-1 28M25 198l1 26M27 196l3 21"/><ellipse cx="77" cy="194" rx="4.5" ry="4"/><path d="M81 195l3 24M78 197l1 28M75 198l-1 26M73 196l-3 21"/></g>
+<g transform="rotate(-7 50 62)">
+<path d="M45 66h10v20H45z" fill="#a39d90"/><ellipse cx="50" cy="47" rx="15" ry="20" fill="url(#sk)"/>
+<ellipse cx="49.6" cy="49" rx="3.6" ry="3" fill="#2a1414" opacity=".65"/><ellipse cx="49.6" cy="49" rx="2.5" ry="1.9" fill="#ece8de"/><circle cx="49.6" cy="49.2" r=".95" fill="#050505"/>
+<path d="M47.5 62q2.5 1.2 5 0" stroke="#5a2a2a" stroke-width=".7" fill="none"/>
+<g filter="url(#hf)"><path d="M50 22C28 20 26 72 29 132L37 205 43 135C45 100 46 70 46.8 58 47 52 47 46 46.5 40 48 34 50 28 50 22Z" fill="#040404"/><path d="M50 22C72 20 74 72 71 132L63 205 57 135C55 100 54 70 53.2 58 53 52 53 46 53.5 40 52 34 50 28 50 22Z" fill="#040404"/>
+<path d="M38 28C31 80 32 150 37 205M42 32C38 90 39 150 42 190M62 28C69 80 68 150 63 205M58 32C62 90 61 150 58 190" stroke="#2a2a2a" stroke-width=".5" fill="none"/><path d="M35 45C32 90 33 140 36 190" stroke="#fff" stroke-opacity=".08" stroke-width="1" fill="none"/>
+<path d="M46.5 44C49 45 51 43 53.5 44M46.8 54C49 55.5 51 53.5 53.2 55M47 61C49.5 62 51 60.5 53 61.5" stroke="#050505" stroke-width=".8" fill="none"/></g></g>
+</symbol></defs></svg>
+    <div id="fx-vignette"></div><div id="fx-grain"></div><div id="fx-black"></div>
+    <div id="fx-figure" style="height:50vh;position:fixed;bottom:0;left:50vw;opacity:0;pointer-events:none"><svg viewBox="0 0 100 300"><use href="#onryo"/></svg></div>
+    <!-- ヘッダー -->
+    <header class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex justify-between items-center z-10 shadow-lg">
+        <div class="flex items-center space-x-3">
+            <button onclick="openSchoolInfo()" class="text-2xl hover:scale-110 transition cursor-pointer bg-slate-800 p-2 rounded-xl border border-slate-700" title="校舎の記録・概要を読む">🏫</button>
+            <h1 class="text-base md:text-xl font-bold tracking-wider text-slate-400">深夜の旧校舎からの脱出</h1>
+        </div>
+        <div class="flex items-center space-x-6">
+            <div class="text-sm bg-slate-800 px-3 py-1 rounded-full border border-slate-700 flex items-center space-x-2">
+                <span class="text-slate-300 font-medium">⏳ 残り時間:</span>
+                <span id="timer" class="font-retro text-2xl text-red-400 font-bold tracking-wider">20:00</span>
+            </div>
+            <button onclick="openHintSelector()" class="bg-amber-600/20 hover:bg-amber-600/40 text-amber-300 text-xs md:text-sm px-3 py-1.5 rounded border border-amber-600/50 transition flex items-center space-x-1 cursor-pointer font-medium">
+                <span>💡</span><span>ヒントを見る</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main id="main-container" class="flex-1 overflow-y-auto p-4 md:p-8 max-w-6xl mx-auto w-full flex flex-col justify-center transition-all duration-700 relative">
+
+        <!-- オープニング画面 -->
+        <div id="screen-intro" class="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl text-center space-y-6 backdrop-blur z-10 relative">
+            <div class="inline-block p-4 rounded-full bg-red-950/60 border border-red-500/40 text-red-500 text-5xl mb-2 animate-bounce">
+                👻
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-100">深夜0時の旧校舎に閉じ込められた</h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                社会人チームで母校のタイムカプセルを掘り起こすため、夜の旧校舎に足を踏み入れたあなたたち。背後で重く響く鉄の扉の音——すべての出入り口が電子ロックされた。<br>
+                構内のスピーカーから響く冷徹なアナウンス：<br>
+                <span class="text-red-400 font-bold block mt-2">「制限時間は20分だ。校舎のあちこちに仕掛けられた論理の断片を紐解き、最終金庫を開けろ……。1分ごとにこの校舎の主が君たちを観察しにやってくる……」</span>
+            </p>
+            <div class="pt-4">
+                <button onclick="startGame()" class="bg-gradient-to-r from-red-700 to-indigo-800 hover:from-red-600 hover:to-indigo-700 text-white font-bold px-10 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 active:translate-y-0 text-base md:text-lg cursor-pointer">
+                    ゲームをスタートする (制限時間20分)
+                </button>
+            </div>
+        </div>
+
+        <!-- プレイ画面 -->
+        <div id="screen-game" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6 h-full z-10 relative">
+            <!-- マップ・移動エリア -->
+            <div class="lg:col-span-2 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
+                        <div class="space-y-1">
+                            <h3 id="room-title" class="text-lg md:text-xl font-bold text-indigo-300">場所: 2年B組 教室</h3>
+                            <p id="progress-indicator" class="text-xs text-amber-400 font-bold">クリアした謎: 0 / 10</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2" id="room-nav"></div>
+                    </div>
+                    <!-- 部屋のビュー -->
+                    <div id="room-view" class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-6 min-h-[300px] flex flex-col justify-center items-center text-center relative overflow-hidden text-slate-200"></div>
+                </div>
+
+                <!-- インベントリ（アイテム欄） -->
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <h4 class="text-xs uppercase tracking-wider text-slate-400 mb-2 font-bold">所持アイテム / 獲得した論理の断片</h4>
+                    <div id="inventory-list" class="flex flex-wrap gap-2 min-h-[48px] bg-slate-950/70 p-2 rounded-xl border border-slate-800/60">
+                        <span class="text-xs text-slate-400 self-center px-2">まだアイテムはありません</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- アクション・入力・通信エリア -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <h3 class="text-sm md:text-base font-bold text-slate-200 mb-3 flex items-center space-x-2">
+                        <span>💬</span><span>チーム作戦盤・回答システム</span>
+                    </h3>
+                    <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-4 h-[240px] overflow-y-auto space-y-3 text-xs md:text-sm text-slate-200" id="log-container">
+                        <div class="text-slate-400 text-xs text-center font-medium">--- 謎解きログ・システム通知 ---</div>
+                        <div class="text-indigo-300">システム: 制限時間20分。1分ごとに校舎の主があなたを覗き込みます。気をつけてください。</div>
+                    </div>
+                </div>
+
+                <!-- アンサー入力フォーム -->
+                <div class="mt-4 pt-4 border-t border-slate-800 space-y-3">
+                    <label for="answer-input" class="block text-xs font-bold text-slate-300">暗号・解答の入力 (数字・ひらがな・アルファベット)</label>
+                    <div class="flex space-x-2">
+                        <input type="text" id="answer-input" placeholder="答えを入力..." class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-red-500 font-medium">
+                        <button onclick="submitAnswer()" class="bg-red-600 hover:bg-red-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow cursor-pointer">認証</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- エンディング画面 1 (真・完全脱出エンド) -->
+        <div id="screen-success-1" class="hidden bg-slate-900/95 border border-emerald-500/30 rounded-2xl p-8 shadow-2xl text-center space-y-6 backdrop-blur z-10 relative">
+            <div class="text-6xl mb-2">🌟</div>
+            <h2 class="text-2xl md:text-3xl font-bold text-emerald-400">エンディング1：真・完全脱出成功！</h2>
+            <p id="success-time-1" class="text-base md:text-lg text-slate-200 font-medium"></p>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+                20分の制限時間内にすべての謎を完全に統合し、悪霊のミスリードを完璧に見破って正門から生還を果たした！
+            </p>
+            <div class="pt-4">
+                <button onclick="location.reload()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-xl border border-slate-700 transition cursor-pointer font-bold">
+                    最初からもう一度遊ぶ
+                </button>
+            </div>
+        </div>
+
+        <!-- エンディング画面 2 (秘密の地下通路エンド) -->
+        <div id="screen-success-2" class="hidden bg-slate-900/95 border border-indigo-500/30 rounded-2xl p-8 shadow-2xl text-center space-y-6 backdrop-blur z-10 relative">
+            <div class="text-6xl mb-2">🗝️</div>
+            <h2 class="text-2xl md:text-3xl font-bold text-indigo-400">エンディング2：秘密の地下通路エンド</h2>
+            <p id="success-time-2" class="text-base md:text-lg text-slate-200 font-medium"></p>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+                すべての断片を集め、歴史の記録から導き出した地下通路のルートを使い、安全に校舎外へ脱出することに成功した！
+            </p>
+            <div class="pt-4">
+                <button onclick="location.reload()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-xl border border-slate-700 transition cursor-pointer font-bold">
+                    最初からもう一度遊ぶ
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- バッドエンディング 1 (タイムアップ) -->
+    <div id="screen-gameover-time" class="fixed inset-0 bg-black z-[99999] hidden flex flex-col items-center justify-center p-4 text-center overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="h-[85vh] relative flex items-center justify-center creeping-ghost"><svg viewBox="0 0 100 300" class="h-full w-auto drop-shadow-[0_0_40px_rgba(120,0,0,.6)]"><use href="#onryo"/></svg></div>
+        </div>
+        <div class="relative z-10 space-y-6 max-w-xl p-8 bg-black/95 rounded-2xl border-2 border-red-950 shadow-2xl backdrop-blur-md">
+            <h2 class="text-3xl md:text-4xl font-black text-red-600 tracking-widest uppercase">GAME OVER</h2>
+            <p class="text-slate-100 text-base md:text-lg font-bold leading-relaxed">
+                「……やっと追いついた……」<br>
+                冷徹な鐘の音とともに、背後の暗闇から伸びてきた冷たい手があなたの首筋を掴んだ。視界が急速に真っ黒に染まっていく……。
+            </p>
+            <div>
+                <button onclick="location.reload()" class="bg-red-800 hover:bg-red-700 text-white font-black text-sm md:text-base px-8 py-3.5 rounded-xl shadow-[0_0_25px_rgba(255,0,0,0.8)] transition cursor-pointer relative z-50">
+                    初めからやり直す
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- バッドエンディング 2 (罠ワード誤認) -->
+    <div id="screen-gameover-trap" class="fixed inset-0 bg-slate-950 z-[99999] hidden flex flex-col items-center justify-center p-4 text-center overflow-hidden border-8 border-red-900">
+        <div class="relative z-10 space-y-6 max-w-xl p-8 bg-slate-900/95 rounded-2xl border-2 border-red-600 shadow-2xl">
+            <div class="text-6xl mb-2">☠️</div>
+            <h2 class="text-2xl md:text-3xl font-black text-red-400 tracking-wider">BAD END: 罠の餌食</h2>
+            <p id="trap-message" class="text-slate-100 text-sm md:text-base font-bold leading-relaxed">
+                すべての論理を統合しきれていない状態で甘美な救済ワードに飛びついたため、防衛トラップが作動した！ あなたは永遠に闇へと閉じ込められた……。
+            </p>
+            <div>
+                <button onclick="location.reload()" class="bg-red-800 hover:bg-red-700 text-white font-black text-sm md:text-base px-8 py-3.5 rounded-xl shadow-[0_0_25px_rgba(255,0,0,0.8)] transition cursor-pointer relative z-50">
+                    初めからやり直す
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル: 学校の歴史・概要 -->
+    <div id="schoolInfoModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-bold text-amber-400 text-base md:text-lg">🏫 旧校舎 建築・歴史アーカイブ</h3>
+                <button onclick="closeModal('schoolInfoModal')" class="text-slate-400 hover:text-white font-bold px-2 cursor-pointer text-lg">✕</button>
+            </div>
+            <div class="text-xs md:text-sm text-slate-200 space-y-3 leading-relaxed font-medium">
+                <p>
+                    この旧校舎は昭和初期に建てられた歴史ある建造物である。戦時中には、教職員や生徒を守るための防空壕や物資を隠すための<span class="text-indigo-300 font-bold">「地下室」</span>が極秘裏に造られたという記録が残されている。
+                </p>
+                <p>
+                    当時の建築図面によれば、校舎の構造はすべてが「表裏一体」に設計されており、地上から脱出するのが困難な緊急時には、隠された下層フロア（地下）へと身を隠すのが唯一の生還ルートであったと伝えられている……。
+                </p>
+            </div>
+            <div class="text-right pt-2 border-t border-slate-800">
+                <button onclick="closeModal('schoolInfoModal')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-4 py-2 rounded-lg cursor-pointer font-bold">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル: 段階的アンロック式ヒント -->
+    <div id="hintModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-bold text-amber-400 text-base md:text-lg">💡 謎解きヒント・ルーム</h3>
+                <button onclick="closeModal('hintModal')" class="text-slate-400 hover:text-white font-bold px-2 cursor-pointer text-lg">✕</button>
+            </div>
+            
+            <div id="hint-selector-view" class="space-y-3">
+                <p class="text-xs md:text-sm text-slate-300 font-medium">ヒントを見たい「謎」を選択してください：</p>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="hint-riddle-buttons"></div>
+            </div>
+
+            <div id="hint-detail-view" class="hidden space-y-4">
+                <div class="flex items-center space-x-2">
+                    <button onclick="backToHintSelector()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded border border-slate-700 cursor-pointer font-bold">⬅ 謎一覧へ戻る</button>
+                    <h4 id="hint-detail-title" class="text-amber-300 font-bold text-xs md:text-sm"></h4>
+                </div>
+                <div class="space-y-3 text-xs md:text-sm text-slate-200">
+                    <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-amber-400 font-bold">ヒント 1 (考え方の導入)</span>
+                            <button id="unlock-btn-1" onclick="unlockHint(1)" class="text-xs bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 px-2.5 py-1 rounded border border-amber-600/50 transition cursor-pointer font-bold">表示する</button>
+                        </div>
+                        <p id="hint-text-1" class="text-xs md:text-sm leading-relaxed text-slate-400 italic">（ボタンを押すと表示されます）</p>
+                    </div>
+                    <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-amber-400 font-bold">ヒント 2 (核心へのアプローチ)</span>
+                            <button id="unlock-btn-2" onclick="unlockHint(2)" class="text-xs bg-slate-800 text-slate-500 px-2.5 py-1 rounded border border-slate-700 cursor-not-allowed font-bold" disabled>ヒント1を先に開いてください</button>
+                        </div>
+                        <p id="hint-text-2" class="text-xs md:text-sm leading-relaxed text-slate-400 italic hidden">（ボタンを押すと表示されます）</p>
+                    </div>
+                    <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-amber-400 font-bold">ヒント 3 (ほぼ答えに近い導き)</span>
+                            <button id="unlock-btn-3" onclick="unlockHint(3)" class="text-xs bg-slate-800 text-slate-500 px-2.5 py-1 rounded border border-slate-700 cursor-not-allowed font-bold" disabled>ヒント2を先に開いてください</button>
+                        </div>
+                        <p id="hint-text-3" class="text-xs md:text-sm leading-relaxed text-slate-400 italic hidden">（ボタンを押すと表示されます）</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-right pt-2 border-t border-slate-800">
+                <button onclick="closeModal('hintModal')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-4 py-2 rounded-lg cursor-pointer font-bold">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル: ズーム表示用 -->
+    <div id="zoomModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 id="zoom-title" class="font-bold text-indigo-300 text-base md:text-lg">詳細調査</h3>
+                <button onclick="closeModal('zoomModal')" class="text-slate-400 hover:text-white font-bold px-2 cursor-pointer text-lg">✕</button>
+            </div>
+            <div id="zoom-body" class="text-sm md:text-base text-slate-200 bg-slate-950 p-6 rounded-xl border border-slate-800 text-center font-medium leading-relaxed"></div>
+            <div class="text-right pt-2">
+                <button onclick="closeModal('zoomModal')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs md:text-sm px-5 py-2.5 rounded-lg cursor-pointer font-bold">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スクリプト -->
+    <script>
+/* 謎・ヒント・解答データ */
+        const hintsData = {
+            1: { title: "謎1 (黒板の席次メモ)", h1: "端の席は2通り。上田を窓側と廊下側で仮定して、矛盾する方を消します。", h2: "上田が廊下側だと、伊藤の隣は3番で、青木が2番になり条件に反します。", h3: "窓側から 上田・伊藤・遠藤・青木 の順。答えは3番目の人物です。" },
+            2: { title: "謎2 (教卓の古文書)", h1: "『一歩先へ進んでいる』のは、各文字が五十音表の上で、という意味です。", h2: "一歩『戻す』と読めます。各文字を、五十音表の1つ前の文字に置き換えます。", h3: "て→つ、け→く、お→え。答えは「つくえ」。" },
+            3: { title: "謎3 (窓ガラスの映り込み)", h1: "鏡に映ると、左右が反転します。短針・長針の位置はどう変わる？", h2: "実際の時刻と鏡像の時刻を足すと、ちょうど12時間になります。", h3: "12:00 − 2:40 = 9:20。「920」でも通ります。" },
+            4: { title: "謎4 (掲示板の論理図表)", h1: "3人それぞれを犯人と仮定して、本当の証言の数を数えます。", h2: "本当の証言がちょうど1つになる仮定だけが正解です。", h3: "AやBが犯人だと本当の証言が2つになります。答えは「C」。" },
+            5: { title: "謎5 (天秤の比率パズル)", h1: "天秤の結果は「左が重い・右が重い・釣り合う」の3通りです。", h2: "1回で3つのグループに分け、重い群を次に絞ります。3→9→…", h3: "3×3×3 = 27。答えは「27」。" },
+            6: { title: "謎6 (保健室の薬瓶)", h1: "『全部間違い』という条件が最強の情報です。混合ラベルは本当は何でしょう？", h2: "混合ラベルが間違いなら、その瓶は混ざっていません。", h3: "「混合」ラベルの瓶を味見すれば、残りも芋づる式に判明します。" },
+            7: { title: "謎7 (ピアノの譜面)", h1: "ドレミは日本語、英字のCDEFGABは音名です。対応させてみましょう。", h2: "ド=C レ=D ミ=E ファ=F ソ=G ラ=A シ=B。", h3: "F・A・C・E。答えは「face」。" },
+            8: { title: "謎8 (放送室のダイヤル)", h1: "隣り合う数の差を書き出してください。", h2: "差は 1, 2, 3, 4 と増えています。", h3: "13 + 5 = 18。答えは「18」。" },
+            9: { title: "謎9 (逆再生テープ)", h1: "音節の順序をひっくり返すだけです。", h2: "「ろ・し・う」を逆順に。", h3: "答えは「うしろ」。……誰かの位置を示しているのかもしれません。" },
+            10: { title: "謎10 (職員室の最終金庫)", h1: "『MIRACLE』は罠です。必要なのは、解いた9つの謎が残した断片です。", h2: "断片は所持アイテム欄に並びます。奇数番の断片の合計と、偶数番の断片の合計を作ってください。", h3: "奇数番=30、偶数番=15 → 3015。校舎は『表裏一体』。逆から読む道もあります。" }
+        };
+
+        const RID={
+            1:["【謎1】黒板の席次メモ","黒板に消し忘れの走り書き。<br>『窓側から数えて1〜4番の席に、青木・伊藤・上田・遠藤が座っていた』<br>・上田は端の席だった<br>・伊藤は上田の隣だった<br>・青木は伊藤の隣ではなかった<br>・遠藤は青木より窓側だった<br><br>窓側から<b>3番目</b>に座っていたのは？（苗字）"],
+            2:["【謎2】教卓の古文書","古文書には一行だけ、震える字で書かれている。<br><span class='text-xl tracking-widest text-amber-200'>『 てけお 』</span><br>欄外：『言葉は一歩、先へ進んでしまった。五十音の表を思い出せ』<br><br>元の言葉は？（ひらがな）"],
+            3:["【謎3】窓ガラスの映り込み","廊下の窓に、校庭の大時計が映っている。ガラスの中の針は<b>2時40分</b>を指す。<br>だが、これは鏡に映った像だ。時計は壊れていない。<br><br>実際の時刻は？（例：3:15）"],
+            4:["【謎4】掲示板の貼り紙","割れた窓の犯人は A・B・C のうち1人。3人の証言のうち、本当なのは<b>1つだけ</b>。<br>A「犯人はBだ」<br>B「Aの証言は嘘だ」<br>C「私は犯人ではない」<br><br>犯人は？（A / B / C）"],
+            5:["【謎5】天秤の走り書き","見た目が同じ球が並び、1個だけ重い。<br>『天秤を<b>3回だけ</b>使って、確実に重い球を特定できる球の最大数は？』"],
+            6:["【謎6】保健室の薬瓶","棚に3つの瓶。ラベルは「砂糖」「塩」「砂糖と塩の混合」。<br>中身は砂糖・塩・混合のどれかだが、<b>ラベルはすべて間違っている</b>。<br>1つだけ味見できるなら、どのラベルの瓶を選ぶ？（ラベルの言葉で）"],
+            7:["【謎7】ピアノの譜面","譜面台に、音符が4つ。 <b>ファ → ラ → ド → ミ</b><br>裏に走り書き：『音は、海の向こうの文字で読め』<br><br>浮かぶ4文字の英単語は？"],
+            8:["【謎8】放送室のダイヤル","ダイヤルの横のメモ。過去に合わせた目盛りの数：<br><span class='text-xl tracking-widest text-amber-200'>3 → 4 → 6 → 9 → 13 → ？</span><br>次に合わせるべき数は？"],
+            9:["【謎9】逆再生テープ","テープを回すと、女の声が同じ言葉を繰り返す。<br>『……ろ……し……う……ろ……し……う……』<br>逆回しにして聞こえる言葉を、ひらがなで答えよ。"]
+        };
+        const NEXTLOC={1:'2年B組 教室',2:'2年B組 教室',3:'中央廊下',4:'中央廊下',5:'理科室',6:'保健室',7:'音楽室',8:'放送室',9:'放送室',10:'職員室'};
+        for(let i=1;i<=9;i++) window['examineRiddle'+i]=()=>{
+            const nx=gameState.solvedCount+1;
+            if(i>nx){addLog('<span class="text-amber-400">システム: 手前の謎が解けていない。これには手が出せない。</span>');openZoom('🔒 まだ調べられない',`<p class="text-slate-300 leading-relaxed">先に【謎${nx}】を解く必要がある。<br>場所：${NEXTLOC[nx]}</p>`);return;}
+            const done=gameState.solvedRiddles['r'+i]?'<p class="text-emerald-400 text-sm">✔ 解決済み</p>':'';
+            openZoom(RID[i][0],`<p class="mb-3 text-slate-200 font-medium leading-relaxed">${RID[i][1]}</p>${done}`);
+        };
+        const ANS={1:['遠藤','えんどう','endo'],2:['つくえ','机'],3:['920','0920','9:20','09:20','9時20分'],4:['c'],5:['27'],6:['混合','こんごう','砂糖と塩の混合'],7:['face'],8:['18'],9:['うしろ','後ろ']};
+        const FRAG={1:3,2:8,3:5,4:2,5:6,6:4,7:9,8:1,9:7};
+        function examineRiddle10() {
+            let c;
+            if (gameState.solvedCount < 9) {
+                c=`<p class="text-amber-400 font-bold mb-3 text-sm">⚠ ロック中（断片 ${gameState.solvedCount} / 9）</p><p class="text-slate-200 text-left text-xs md:text-sm leading-relaxed">金庫には「救済ワード『MIRACLE』を入力せよ」と淡く光っている。<br><span class="text-red-400 italic">甘い言葉ほど罠。校舎に散らばる9つの断片を集めるまで、本当の扉は開かない……。</span></p>`;
+            } else {
+                c=`<p class="text-emerald-400 font-bold mb-3 text-sm">✔ 断片が9つ揃いました</p><p class="text-slate-200 text-left text-xs md:text-sm leading-relaxed">封印されていた本当の指示が浮かぶ：<br><span class="bg-slate-900 p-3 rounded block border border-red-900 text-amber-200 mt-2">「4桁の暗証番号を入力せよ。<br>上2桁＝奇数番の謎の断片の合計。<br>下2桁＝偶数番の謎の断片の合計。<br>『MIRACLE』は入力するな。……この校舎は、表と裏でできている」</span></p>`;
+            }
+            openZoom("【謎10】マスター金庫", c);
+        }
+
+
+/* 遠近法の暗い廊下。時間経過で奥の人影が近づく */
+function sceneHtml(){
+  const sd=[...gameState.currentRoom].reduce((a,c)=>a+c.charCodeAt(0),0),m=Math.floor((gameState.elapsedSeconds||0)/60);
+  const vx=200+((sd%5)-2)*16,vy=118,x0=vx-40,x1=vx+40,y0=vy-30,y1=vy+30;
+  const yy=(u,f)=>u*y0+f*(260-u*(260-y1)-u*y0);
+  const Lw=(u,f)=>[u*x0,yy(u,f)], Rw=(u,f)=>[400-u*(400-x1),yy(u,f)];
+  const pt=a=>a.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const quad=(P,u1,u2,f1,f2)=>pt([P(u1,f1),P(u2,f1),P(u2,f2),P(u1,f2)]);
+  let win='',lit='';
+  for(let i=0;i<2+sd%2;i++){const u1=.1+i*.26,u2=u1+.16,b1=Lw(u1,1),b2=Lw(u2,1);
+    win+=`<polygon points="${quad(Lw,u1,u2,.2,.62)}" fill="url(#mo)"/>`;
+    lit+=`<polygon points="${pt([b1,b2,[b2[0]+60*(1-u2),b2[1]+14*(1-u2)],[b1[0]+60*(1-u1),b1[1]+14*(1-u1)]])}" fill="rgba(160,185,210,.16)"/>`;}
+  const doors=[[.2,.32],[.55,.65]].map(d=>`<polygon points="${quad(Rw,d[0],d[1],.12,1)}" fill="#04060a" stroke="#1d252b" stroke-width=".6"/>`).join('');
+  let fig='';
+  if(m>=3){const s=Math.min(.95,.18+m*.05),op=Math.min(.9,.2+m*.05),tilt=m>=9?6:0;
+    fig=`<g class="fl"><g transform="translate(${vx+(m>=9?((m%3)-1)*6:0)} ${y1}) scale(${s*.75}) rotate(${tilt})" opacity="${op}" filter="url(#bl)">${window.GHOST_IMG?'<image href="img/ghost.png" x="-50" y="-262" width="100" height="300" preserveAspectRatio="xMidYMax meet"/>':'<use href="#onryo" x="-50" y="-262" width="100" height="300"/>'}</g></g>`;}
+  return `<div id="scene" class="absolute inset-0"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" class="w-full h-full"><defs><linearGradient id="wl" x1="0" x2="1"><stop offset="0" stop-color="#0b0f13"/><stop offset="1" stop-color="#1b232a"/></linearGradient><linearGradient id="fl" y1="0" y2="1"><stop offset="0" stop-color="#15181b"/><stop offset="1" stop-color="#050607"/></linearGradient><linearGradient id="mo" y1="0" y2="1"><stop offset="0" stop-color="#9fb4c8" stop-opacity=".5"/><stop offset="1" stop-color="#5d7386" stop-opacity=".2"/></linearGradient><filter id="bl"><feGaussianBlur stdDeviation="1.1"/></filter><filter id="b3"><feGaussianBlur stdDeviation="3"/></filter></defs><rect width="400" height="260" fill="#030405"/><polygon points="0,0 400,0 ${x1},${y0} ${x0},${y0}" fill="#07090b"/><polygon points="0,260 400,260 ${x1},${y1} ${x0},${y1}" fill="url(#fl)"/><polygon points="0,0 ${x0},${y0} ${x0},${y1} 0,260" fill="url(#wl)"/><polygon points="400,0 ${x1},${y0} ${x1},${y1} 400,260" fill="#0c1116"/><rect x="${x0}" y="${y0}" width="80" height="60" fill="#020303"/><rect x="${vx-9}" y="${y0+12}" width="18" height="48" fill="#0a0d10" stroke="#20292f" stroke-width=".5"/>${win}${doors}<g filter="url(#b3)">${lit}<rect x="${vx-3}" y="${y1}" width="6" height="${260-y1}" fill="#fff" opacity=".05"/></g><g class="fl"><rect x="${vx-14}" y="${y0-3}" width="28" height="3" fill="#cfe3ff"/><ellipse cx="${vx}" cy="${y0}" rx="40" ry="10" fill="#9fb8d8" opacity=".12" filter="url(#b3)"/></g>${fig}</svg><div class="absolute inset-0" style="background:radial-gradient(circle 190px at var(--mx,50%) var(--my,55%),transparent 0,rgba(0,0,0,.3) 50%,rgba(0,0,0,.9) 100%)"></div><div class="absolute top-2 left-3 font-retro text-xl text-red-500 z-10"><span class="timer-blink">●</span> REC <span id="tc" class="text-slate-300"></span></div><div class="absolute top-2 right-3 font-retro text-lg text-slate-400 z-10">BAT ▮▮▯</div></div>`;
+}
+function refreshScene(){const sc=document.getElementById('scene');if(sc&&!gameState.isGameOver)sc.outerHTML=sceneHtml();}
+document.addEventListener('pointermove',e=>{const rv=document.getElementById('room-view'),sc=document.getElementById('scene');if(!rv||!sc)return;const r=rv.getBoundingClientRect();sc.style.setProperty('--mx',(e.clientX-r.left)+'px');sc.style.setProperty('--my',(e.clientY-r.top)+'px');});
+
+/* img/ghost.png があれば実写画像に差し替える */
+window.GHOST_IMG=false;
+(function(){const im=new Image();im.onload=()=>{window.GHOST_IMG=true;const t='<img src="img/ghost.png" alt="" style="height:100%;width:auto">';document.getElementById('fx-figure').innerHTML=t;const g=document.querySelector('.creeping-ghost');if(g)g.innerHTML=t;refreshScene();};im.src='img/ghost.png';})();
+
+/* 恐怖演出: 音響・照明・人影 */
+        const FX={
+            c(){return gameState.audioCtx},
+            init(){const c=this.c();if(!c)return;this.bus=c.createGain();this.bus.connect(c.destination);const cv=c.createConvolver(),n=c.sampleRate*2.2,b=c.createBuffer(2,n,c.sampleRate);for(let h=0;h<2;h++){const d=b.getChannelData(h);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);}cv.buffer=b;const w=c.createGain();w.gain.value=0.5;this.bus.connect(w);w.connect(cv);cv.connect(c.destination);const nb=c.createBuffer(1,c.sampleRate*4,c.sampleRate),nd=nb.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=nb;s.loop=true;const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=140;const g=c.createGain();g.gain.value=0.4;s.connect(lp);lp.connect(g);g.connect(c.destination);s.start();this.tone=g;},
+            stop(){if(this.tone)this.tone.gain.value=0;},
+            noise(d,f,q,v,t=0,type='bandpass'){const c=this.c();if(!c)return;const n=c.sampleRate*d,b=c.createBuffer(1,n,c.sampleRate),a=b.getChannelData(0);for(let i=0;i<n;i++)a[i]=Math.random()*2-1;const o=c.createBufferSource();o.buffer=b;const fl=c.createBiquadFilter();fl.type=type;fl.frequency.value=f;fl.Q.value=q;const g=c.createGain(),T=c.currentTime+t;g.gain.setValueAtTime(0.0001,T);g.gain.exponentialRampToValueAtTime(v,T+d*0.35);g.gain.exponentialRampToValueAtTime(0.0001,T+d);o.connect(fl);fl.connect(g);g.connect(this.bus||c.destination);o.start(T);},
+            thud(v,t=0){const c=this.c();if(!c)return;const o=c.createOscillator(),g=c.createGain(),T=c.currentTime+t;o.frequency.setValueAtTime(75,T);o.frequency.exponentialRampToValueAtTime(30,T+0.14);g.gain.setValueAtTime(v,T);g.gain.exponentialRampToValueAtTime(0.001,T+0.16);o.connect(g);g.connect(this.bus||c.destination);o.start(T);o.stop(T+0.17);},
+            steps(n,v){for(let i=0;i<n;i++){const t=i*(0.55+Math.random()*0.15);const k=0.4+0.6*i/n;this.thud(v*k,t);this.noise(0.12,250,1,v*0.6*k,t,'lowpass');}},
+            knock(v){[0,0.3,0.52].forEach(t=>this.thud(v,t));},
+            whisper(v){for(let i=0;i<5;i++)this.noise(0.25+Math.random()*0.2,2500+Math.random()*1500,6,v,i*0.4);},
+            breath(v){this.noise(1.6,700,1.2,v,0);this.noise(1.6,700,1.2,v,2.2);},
+            groan(v){this.noise(1.4,160,10,v);},
+            fig(x,h,op,ms){const f=document.getElementById('fx-figure');f.style.left=x+'vw';f.style.height=h+'vh';f.style.opacity=op;setTimeout(()=>f.style.opacity=0,ms);},
+            black(ms){const b=document.getElementById('fx-black');b.style.opacity=1;setTimeout(()=>b.style.opacity=0,ms);},
+            flick(k){const b=document.getElementById('fx-black');let i=0;const iv=setInterval(()=>{b.style.opacity=i%2?0:0.85;if(++i>=k*2){clearInterval(iv);b.style.opacity=0;}},70+Math.random()*60);},
+            tick(){const tt=gameState.elapsedSeconds,tc=document.getElementById('tc');if(tc)tc.textContent=[tt/3600|0,(tt/60|0)%60,tt%60].map(x=>String(x).padStart(2,'0')).join(':');const p=Math.min(1,gameState.elapsedSeconds/1200),st=document.documentElement.style;if(this.tone)this.tone.gain.value=0.4+p*1.2;st.setProperty('--dk',(0.45+0.5*p).toFixed(2));st.setProperty('--clear',(85-50*p).toFixed(0)+'%');st.setProperty('--gr',(0.05+0.2*p).toFixed(2));if(Math.random()<0.015+p*0.05)this.flick(1+(Math.random()*2|0));},
+            log(a){addLog(`<span class="text-red-400/80 italic">${a[Math.floor(Math.random()*a.length)]}</span>`);},
+            minute(m){refreshScene();
+                if(m<=3){[()=>this.steps(3,0.12),()=>this.knock(0.25),()=>this.groan(1.2)][(m-1)%3]();this.log(["……どこかで、床が軋んだ。","……廊下の奥から、ゆっくり足音が近づいてくる。","……コン、コン。壁の向こうから、ノックの音。"]);}
+                else if(m<=8){this.steps(5,0.3);this.whisper(0.5);this.flick(2);this.fig(Math.random()<0.5?4:96,55,0.35,700);this.log(["……窓に、自分以外の影が映っていた。","……何か囁いている。聞き取れない。","……誰かが、ずっとこちらを見ている。"]);}
+                else if(m<=13){this.breath(1.2);this.whisper(0.8);this.black(1200);setTimeout(()=>this.fig(30+Math.random()*40,80,0.75,900),1300);this.log(["……耳元で、息をする音がした。","……「みつけた」と聞こえた気がした。","……さっきまで無かった濡れた足跡が、すぐそこまで続いている。"]);}
+                else{this.steps(8,0.6);this.knock(0.8);this.black(1600);setTimeout(()=>{this.fig(50,105,0.9,1400);document.body.classList.add('fx-shake');setTimeout(()=>document.body.classList.remove('fx-shake'),1500);},1700);this.log(["……足音が、この部屋の前で止まった。","……すぐ後ろに、冷たい空気を感じる。振り向いてはいけない。"]);}
+            },
+            room(){if(Math.floor(gameState.elapsedSeconds/60)>=5&&Math.random()<0.3){this.fig(8+Math.random()*84,45,0.25,500);this.steps(1,0.2);}}
+        };
+
+/* ゲーム進行・UI */
+        let gameState = {
+            currentRoom: 'class2b',
+            inventory: [],
+            solvedCount: 0,
+            errorCount: 0,
+            solvedRiddles: {
+                r1: false, r2: false, r3: false, r4: false, r5: false,
+                r6: false, r7: false, r8: false, r9: false, r10: false
+            },
+            startTime: null,
+            timerInterval: null,
+            elapsedSeconds: 0,
+            isGameOver: false,
+            audioCtx: null,
+            bgmInterval: null,
+            currentHintRiddle: 1,
+            lastPhantomMinute: 0
+        };
+
+        const rooms = {
+            class2b: {
+                name: '2年B組 教室 (謎1 & 謎2)',
+                nav: [
+                    { to: 'hallway', label: '廊下 ➔' },
+                    { to: 'science', label: '理科室' },
+                    { to: 'nurse', label: '保健室' },
+                    { to: 'music', label: '音楽室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🏫</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">2年B組 教室</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">黒板の言葉の序列と、教卓に残された古文書がある。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle1()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎1】黒板の席次メモ</button>
+                            <button onclick="examineRiddle2()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎2】教卓の古文書</button>
+                        </div>
+                    </div>
+                `
+            },
+            hallway: {
+                name: '中央廊下 (謎3 & 謎4)',
+                nav: [
+                    { to: 'class2b', label: '⬅ 教室' },
+                    { to: 'science', label: '理科室' },
+                    { to: 'broadcast', label: '放送室' },
+                    { to: 'staffroom', label: '🔒 職員室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🚪</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">中央廊下・掲示板</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">窓ガラスの映り込みと、掲示板の規則性を示す図表がある。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle3()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎3】窓ガラスの映り込み</button>
+                            <button onclick="examineRiddle4()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎4】掲示板の論理図表</button>
+                        </div>
+                    </div>
+                `
+            },
+            science: {
+                name: '理科室 (謎5)',
+                nav: [
+                    { to: 'hallway', label: '⬅ 廊下' },
+                    { to: 'class2b', label: '教室' },
+                    { to: 'nurse', label: '保健室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🧪</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">理科室・実験台</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">天秤と、未知の溶液に関する哲学的ジレンマのメモがある。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle5()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎5】天秤の比率パズル</button>
+                        </div>
+                    </div>
+                `
+            },
+            nurse: {
+                name: '保健室 (謎6)',
+                nav: [
+                    { to: 'hallway', label: '⬅ 廊下' },
+                    { to: 'science', label: '理科室' },
+                    { to: 'music', label: '音楽室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">💊</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">保健室・ベッドルーム</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">人体解剖図と、心理テストのカルテが置かれている。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle6()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎6】保健室の薬瓶</button>
+                        </div>
+                    </div>
+                `
+            },
+            music: {
+                name: '音楽室 (謎7)',
+                nav: [
+                    { to: 'hallway', label: '⬅ 廊下' },
+                    { to: 'class2b', label: '教室' },
+                    { to: 'broadcast', label: '放送室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🎹</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">音楽室・グランドピアノ</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">五線譜に書かれた不協和音の暗号がある。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle7()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎7】ピアノの譜面</button>
+                        </div>
+                    </div>
+                `
+            },
+            broadcast: {
+                name: '放送室 (謎8 & 謎9)',
+                nav: [
+                    { to: 'hallway', label: '⬅ 廊下' },
+                    { to: 'music', label: '音楽室' },
+                    { to: 'staffroom', label: '職員室' }
+                ],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🎙️</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">放送室・ミキサー卓</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">アナログラジオの周波数盤と、哲学的メッセージが刻まれたテープがある。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle8()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎8】放送室のダイヤル</button>
+                            <button onclick="examineRiddle9()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs md:text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition cursor-pointer font-bold">【謎9】逆再生テープ</button>
+                        </div>
+                    </div>
+                `
+            },
+            staffroom: {
+                name: '職員室 (最終 謎10)',
+                nav: [{ to: 'hallway', label: '⬅ 廊下' }],
+                render: () => `
+                    <div class="space-y-4">
+                        <div class="text-4xl mb-2">🏛️</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-100">職員室・マスター金庫 (謎10)</h4>
+                        <p class="text-xs md:text-sm text-slate-300 font-medium">これまでの1〜9の謎で得た「思考のベクトル」をすべて統合する最終防壁。</p>
+                        <div class="flex flex-wrap justify-center gap-3 pt-2">
+                            <button onclick="examineRiddle10()" class="bg-red-950 hover:bg-red-900 text-red-200 text-xs md:text-sm px-5 py-3 rounded-xl border border-red-700 transition font-bold cursor-pointer">【謎10】マスター金庫の統合パネル</button>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+
+        
+        
+
+        function startGame() {
+            document.getElementById('screen-intro').classList.add('hidden');
+            document.getElementById('screen-game').classList.remove('hidden');
+            gameState.startTime = Date.now();
+            gameState.timerInterval = setInterval(updateTimer, 1000);
+            initHorrorBGM();
+            try{FX.init();}catch(e){}
+            renderRoom();
+            addLog("ゲーム開始！制限時間20分。大人の論理的思考でこの迷宮を突破せよ！");
+        }
+
+        function initHorrorBGM() {
+            try {
+                gameState.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                
+                function playAmbientLoop() {
+                    if (gameState.isGameOver || !gameState.audioCtx) return;
+                    try {
+                        let osc = gameState.audioCtx.createOscillator();
+                        let gain = gameState.audioCtx.createGain();
+                        
+                        osc.type = 'sine';
+                        let now = gameState.audioCtx.currentTime;
+                        osc.frequency.setValueAtTime(55, now);
+                        osc.frequency.linearRampToValueAtTime(58.27, now + 4);
+                        osc.frequency.linearRampToValueAtTime(55, now + 8);
+                        
+                        gain.gain.setValueAtTime(0.01, now);
+                        gain.gain.linearRampToValueAtTime(0.25, now + 3);
+                        gain.gain.linearRampToValueAtTime(0.01, now + 8);
+                        
+                        osc.connect(gain);
+                        gain.connect(gameState.audioCtx.destination);
+                        
+                        osc.start(now);
+                        osc.stop(now + 8);
+                    } catch(err) {}
+                }
+
+                playAmbientLoop();
+                gameState.bgmInterval = setInterval(playAmbientLoop, 8000);
+            } catch(e) {}
+        }
+
+        function playHeartbeat() {
+            try {
+                if (!gameState.audioCtx || gameState.isGameOver) return;
+                let ctx = gameState.audioCtx;
+
+                function singleBeat(delay) {
+                    setTimeout(() => {
+                        if (gameState.isGameOver) return;
+                        let osc = ctx.createOscillator();
+                        let gain = ctx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(60, ctx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.15);
+                        
+                        gain.gain.setValueAtTime(0.8, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+                        
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.15);
+                    }, delay);
+                }
+
+                singleBeat(0);
+                singleBeat(250);
+            } catch(e) {}
+        }
+
+        function triggerPhantomFlash() {
+            const overlay = document.getElementById('phantom-overlay');
+            if (!overlay || gameState.isGameOver) return;
+            overlay.classList.remove('hidden');
+            
+            try {
+                if (gameState.audioCtx) {
+                    let ctx = gameState.audioCtx;
+                    let osc = ctx.createOscillator();
+                    let gain = ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(100, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.6);
+                    gain.gain.setValueAtTime(0.6, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.6);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.6);
+                }
+            } catch(e) {}
+
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 3500);
+        }
+
+        function playHorrorScream() {
+            try {
+                if (!gameState.audioCtx) return;
+                let ctx = gameState.audioCtx;
+                
+                let osc1 = ctx.createOscillator();
+                let gain1 = ctx.createGain();
+                osc1.type = 'sawtooth';
+                osc1.frequency.setValueAtTime(45, ctx.currentTime);
+                osc1.frequency.linearRampToValueAtTime(25, ctx.currentTime + 3);
+                gain1.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain1.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 3);
+                osc1.connect(gain1);
+                gain1.connect(ctx.destination);
+                osc1.start();
+                osc1.stop(ctx.currentTime + 3);
+
+                setTimeout(() => {
+                    let osc2 = ctx.createOscillator();
+                    let gain2 = ctx.createGain();
+                    osc2.type = 'sine';
+                    osc2.frequency.setValueAtTime(500, ctx.currentTime);
+                    osc2.frequency.exponentialRampToValueAtTime(1500, ctx.currentTime + 1.5);
+                    osc2.frequency.linearRampToValueAtTime(180, ctx.currentTime + 2.5);
+                    gain2.gain.setValueAtTime(0.4, ctx.currentTime);
+                    gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.5);
+                    osc2.connect(gain2);
+                    gain2.connect(ctx.destination);
+                    osc2.start();
+                    osc2.stop(ctx.currentTime + 2.5);
+                }, 400);
+
+                const phantomTexts = [
+                    "「……すぐ後ろにいる……」",
+                    "「……まだ逃げられると思っているのか……？」",
+                    "「……時間がない……」"
+                ];
+                const randomText = phantomTexts[Math.floor(Math.random() * phantomTexts.length)];
+                addLog(`<span class="text-red-500 font-bold">${randomText}</span>`);
+            } catch(e) {}
+        }
+
+        function updateTimer() {
+            if (gameState.isGameOver) return;
+            const now = Date.now();
+            gameState.elapsedSeconds = Math.floor((now - gameState.startTime) / 1000);
+            
+            const totalLimit = 1200;
+            const remaining = Math.max(0, totalLimit - gameState.elapsedSeconds);
+            const mins = Math.floor(remaining / 60).toString().padStart(2, '0');
+            const secs = (remaining % 60).toString().padStart(2, '0');
+            const timerEl = document.getElementById('timer');
+            if (timerEl) {
+                timerEl.innerText = `${mins}:${secs}`;
+                
+                if (remaining <= 180) {
+                    timerEl.className = "font-retro text-2xl text-red-500 font-bold timer-blink";
+                    playHeartbeat();
+                } else if (remaining <= 300) {
+                    timerEl.className = "font-retro text-2xl text-red-500 font-bold timer-blink";
+                    playHeartbeat();
+                } else if (remaining <= 600) {
+                    timerEl.className = "font-retro text-2xl text-red-500 font-bold";
+                }
+            }
+            
+            try{FX.tick();}catch(e){}
+            const currentElapsedMinutes = Math.floor(gameState.elapsedSeconds / 60);
+            if (currentElapsedMinutes > gameState.lastPhantomMinute && remaining > 0) {
+                gameState.lastPhantomMinute = currentElapsedMinutes;
+                try{FX.minute(currentElapsedMinutes);}catch(e){}
+            }
+
+            if (remaining <= 0) {
+                triggerGameOverTime();
+            }
+        }
+
+        function triggerGameOverTime() {
+            if (gameState.isGameOver) return;
+            gameState.isGameOver = true;
+            clearInterval(gameState.timerInterval);
+            clearInterval(gameState.bgmInterval); FX.stop();
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-gameover-time').classList.remove('hidden');
+        }
+
+        function triggerGameOverTrap(msg) {
+            if (gameState.isGameOver) return;
+            gameState.isGameOver = true;
+            clearInterval(gameState.timerInterval);
+            clearInterval(gameState.bgmInterval); FX.stop();
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('trap-message').innerText = msg;
+            document.getElementById('screen-gameover-trap').classList.remove('hidden');
+        }
+
+        function changeRoom(roomKey) {
+            if (gameState.isGameOver) return;
+            gameState.currentRoom = roomKey;
+            FX.room();
+            renderRoom();
+        }
+
+        function renderRoom() {
+            const room = rooms[gameState.currentRoom];
+            document.getElementById('room-title').innerText = `場所: ${room.name}`;
+            document.getElementById('progress-indicator').innerText = `クリアした謎: ${gameState.solvedCount} / 10 ／ 次: ${NEXTLOC[gameState.solvedCount+1]}`;
+            
+            let navHtml = '';
+            room.nav.forEach(n => {
+                navHtml += `<button onclick="changeRoom('${n.to}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition cursor-pointer font-bold">${n.label}</button>`;
+            });
+            document.getElementById('room-nav').innerHTML = navHtml;
+            document.getElementById('room-view').innerHTML = sceneHtml() + '<div class="relative z-10 bg-black/55 rounded-xl p-5 backdrop-blur-[1px]">' + room.render() + '</div>';
+            decorateRiddleButtons();
+            renderInventory();
+        }
+
+        function renderInventory() {
+            const invContainer = document.getElementById('inventory-list');
+            if (!invContainer) return;
+            if (gameState.inventory.length === 0) {
+                invContainer.innerHTML = '<span class="text-xs text-slate-400 self-center px-2 font-medium">まだアイテムはありません</span>';
+                return;
+            }
+            let html = '';
+            gameState.inventory.forEach(item => {
+                html += `<div class="bg-indigo-950/70 border border-indigo-500/40 text-indigo-200 text-xs px-3 py-1.5 rounded-lg flex items-center space-x-1 font-medium"><span>📦</span><span>${item}</span></div>`;
+            });
+            invContainer.innerHTML = html;
+        }
+
+        function addLog(text) {
+            const logContainer = document.getElementById('log-container');
+            if (!logContainer) return;
+            const div = document.createElement('div');
+            div.className = "text-slate-200 border-l-2 border-red-500/60 pl-2.5 py-0.5 font-medium";
+            div.innerHTML = text;
+            logContainer.appendChild(div);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function submitAnswer() {
+            if (gameState.isGameOver) return;
+            const inputEl = document.getElementById('answer-input');
+            if (!inputEl) return;
+            const input = inputEl.value.normalize('NFKC').trim().toLowerCase();
+            if (!input) return;
+            inputEl.value = '';
+
+            addLog(`入力解答: 「${input}」`);
+
+            const trapLeads = ['miracle', 'きせき', '奇跡', 'freedom', 'free', 'escape'];
+            if (trapLeads.includes(input)) {
+                triggerGameOverTrap(`情報がまだ ${gameState.solvedCount} / 10 問しか揃っていない、あるいは罠のワード「${input}」を選んでしまったため、防衛トラップが作動した！`);
+                return;
+            }
+
+            let matched = false;
+            const cur = gameState.solvedCount + 1;
+            if (cur <= 9 && ANS[cur].includes(input)) { markSolved('r'+cur, cur); matched = true; }
+            else if (cur <= 9 && Object.keys(ANS).some(k => k > cur && ANS[k].includes(input))) {
+                addLog('システム: その謎にはまだ辿り着いていない。今の謎を解け。'); return;
+            }
+            if (!matched && (input === '3015' || input === '5103')) {
+                if (gameState.solvedCount < 9) { addLog(`システム: 金庫は沈黙したまま。断片が足りない（${gameState.solvedCount}/9）`); return; }
+                gameState.solvedRiddles.r10 = true;
+                if (input === '3015') triggerSuccess1(); else triggerSuccess2();
+                return;
+            }
+
+            if (!matched) {
+                gameState.errorCount++;
+                addLog(`システム: 不正解、またはまだ解けない暗号です。（誤り回数: ${gameState.errorCount} / 3）`);
+                if (gameState.errorCount >= 3) {
+                    triggerGameOverTrap("誤った入力を3回繰り返したため、校舎の防衛セキュリティが暴走した……！");
+                }
+            }
+        }
+
+        function markSolved(key, n) {
+            gameState.solvedRiddles[key] = true;
+            gameState.solvedCount++;
+            gameState.inventory.push(`断片${n}: 【${FRAG[n]}】`);
+            renderInventory();
+            document.getElementById('progress-indicator').innerText = `クリアした謎: ${gameState.solvedCount} / 10`;
+            addLog(`【正解】謎${n} を解いた。断片【${FRAG[n]}】を手に入れた。`);
+            renderRoom();
+            if (n < 9) addLog(`システム: 次の謎は【${NEXTLOC[n+1]}】にある。`);
+            if (gameState.solvedCount === 9) addLog("システム: 断片が9つ揃った。職員室の金庫を調べよ。");
+        }
+
+        function triggerSuccess1() {
+            if (gameState.isGameOver) return;
+            gameState.isGameOver = true;
+            clearInterval(gameState.timerInterval);
+            clearInterval(gameState.bgmInterval); FX.stop();
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-success-1').classList.remove('hidden');
+            const mins = Math.floor(gameState.elapsedSeconds / 60);
+            const secs = gameState.elapsedSeconds % 60;
+            document.getElementById('success-time-1').innerText = `クリアタイム: ${mins}分${secs}秒`;
+        }
+
+        function triggerSuccess2() {
+            if (gameState.isGameOver) return;
+            gameState.isGameOver = true;
+            clearInterval(gameState.timerInterval);
+            clearInterval(gameState.bgmInterval); FX.stop();
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-success-2').classList.remove('hidden');
+            const mins = Math.floor(gameState.elapsedSeconds / 60);
+            const secs = gameState.elapsedSeconds % 60;
+            document.getElementById('success-time-2').innerText = `クリアタイム: ${mins}分${secs}秒`;
+        }
+
+        function openZoom(title, htmlContent) {
+            document.getElementById('zoom-title').innerText = title;
+            document.getElementById('zoom-body').innerHTML = htmlContent;
+            document.getElementById('zoomModal').classList.remove('hidden');
+        }
+
+        function openSchoolInfo() { document.getElementById('schoolInfoModal').classList.remove('hidden'); }
+
+        function openHintSelector() {
+            const container = document.getElementById('hint-riddle-buttons');
+            let html = '';
+            for (let i = 1; i <= 10; i++) {
+                html += `<button onclick="showHintDetail(${i})" class="bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs md:text-sm py-2 px-3 rounded-lg border border-slate-700 transition font-bold cursor-pointer">謎 ${i}</button>`;
+            }
+            container.innerHTML = html;
+            document.getElementById('hint-selector-view').classList.remove('hidden');
+            document.getElementById('hint-detail-view').classList.add('hidden');
+            document.getElementById('hintModal').classList.remove('hidden');
+        }
+
+        function showHintDetail(riddleNum) {
+            gameState.currentHintRiddle = riddleNum;
+            const data = hintsData[riddleNum];
+            document.getElementById('hint-detail-title').innerText = data.title;
+            
+            document.getElementById('hint-text-1').innerText = "（ボタンを押すと表示されます）";
+            document.getElementById('hint-text-1').className = "text-xs md:text-sm leading-relaxed text-slate-400 italic font-medium";
+            const btn1 = document.getElementById('unlock-btn-1');
+            btn1.innerText = "表示する";
+            btn1.className = "text-xs bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 px-2.5 py-1 rounded border border-amber-600/50 transition cursor-pointer font-bold";
+            btn1.disabled = false;
+
+            document.getElementById('hint-text-2').innerText = "";
+            document.getElementById('hint-text-2').classList.add('hidden');
+            const btn2 = document.getElementById('unlock-btn-2');
+            btn2.innerText = "ヒント1を先に開いてください";
+            btn2.className = "text-xs bg-slate-800 text-slate-500 px-2.5 py-1 rounded border border-slate-700 cursor-not-allowed font-bold";
+            btn2.disabled = true;
+
+            document.getElementById('hint-text-3').innerText = "";
+            document.getElementById('hint-text-3').classList.add('hidden');
+            const btn3 = document.getElementById('unlock-btn-3');
+            btn3.innerText = "ヒント2を先に開いてください";
+            btn3.className = "text-xs bg-slate-800 text-slate-500 px-2.5 py-1 rounded border border-slate-700 cursor-not-allowed font-bold";
+            btn3.disabled = true;
+
+            document.getElementById('hint-selector-view').classList.add('hidden');
+            document.getElementById('hint-detail-view').classList.remove('hidden');
+        }
+
+        function unlockHint(hintLevel) {
+            const data = hintsData[gameState.currentHintRiddle];
+            if (hintLevel === 1) {
+                document.getElementById('hint-text-1').innerText = data.h1;
+                document.getElementById('hint-text-1').className = "text-xs md:text-sm leading-relaxed text-slate-100 not-italic font-medium";
+                const btn1 = document.getElementById('unlock-btn-1');
+                btn1.innerText = "表示済み"; btn1.disabled = true;
+
+                const btn2 = document.getElementById('unlock-btn-2');
+                btn2.innerText = "表示する";
+                btn2.className = "text-xs bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 px-2.5 py-1 rounded border border-amber-600/50 transition cursor-pointer font-bold";
+                btn2.disabled = false;
+                document.getElementById('hint-text-2').classList.remove('hidden');
+                document.getElementById('hint-text-2').innerText = "（ボタンを押すと表示されます）";
+                document.getElementById('hint-text-2').className = "text-xs md:text-sm leading-relaxed text-slate-400 italic font-medium";
+            } else if (hintLevel === 2) {
+                document.getElementById('hint-text-2').innerText = data.h2;
+                document.getElementById('hint-text-2').className = "text-xs md:text-sm leading-relaxed text-slate-100 not-italic font-medium";
+                const btn2 = document.getElementById('unlock-btn-2');
+                btn2.innerText = "表示済み"; btn2.disabled = true;
+
+                const btn3 = document.getElementById('unlock-btn-3');
+                btn3.innerText = "表示する";
+                btn3.className = "text-xs bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 px-2.5 py-1 rounded border border-amber-600/50 transition cursor-pointer font-bold";
+                btn3.disabled = false;
+                document.getElementById('hint-text-3').classList.remove('hidden');
+                document.getElementById('hint-text-3').innerText = "（ボタンを押すと表示されます）";
+                document.getElementById('hint-text-3').className = "text-xs md:text-sm leading-relaxed text-slate-400 italic font-medium";
+            } else if (hintLevel === 3) {
+                document.getElementById('hint-text-3').innerText = data.h3;
+                document.getElementById('hint-text-3').className = "text-xs md:text-sm leading-relaxed text-slate-100 not-italic font-medium";
+                const btn3 = document.getElementById('unlock-btn-3');
+                btn3.innerText = "表示済み"; btn3.disabled = true;
+            }
+        }
+
+        function backToHintSelector() {
+            document.getElementById('hint-detail-view').classList.add('hidden');
+            document.getElementById('hint-selector-view').classList.remove('hidden');
+        }
+
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    
+        function decorateRiddleButtons() {
+            document.querySelectorAll('#room-view button[onclick^="examineRiddle"]').forEach(b => {
+                const n = +b.getAttribute('onclick').match(/\d+/)[0];
+                if (n >= 10) return;
+                if (gameState.solvedRiddles['r'+n]) { b.classList.add('opacity-50'); b.innerHTML = '✔ ' + b.innerHTML; }
+                else if (n > gameState.solvedCount + 1) { b.classList.add('opacity-40'); b.innerHTML = '🔒 ' + b.innerHTML; }
+            });
+        }
+
+</script>
+</body>
+</html>
